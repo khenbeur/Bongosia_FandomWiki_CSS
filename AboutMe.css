@@ -171,3 +171,312 @@ h1 {
 .Social-Icons img:hover{
     transform: translateY(-5px);
 }
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* DESKTOP (1200px and above) - Default */
+@media (min-width: 1200px) {
+    .AboutMe {
+        padding: 100px 40px;
+    }
+    .AboutMe-Grid {
+        grid-template-columns: 280px 1fr 240px;
+        gap: 50px;
+        max-width: 1400px;
+    }
+    .Sidebar {
+        padding: 30px;
+        border-radius: 20px;
+    }
+    .Projects-List {
+        padding: 40px;
+        border-radius: 20px;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+/* TABLET (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    header nav a {
+        font-size: 13px;
+        margin-left: 8px;
+        padding: 4px 8px;
+    }
+    .AboutMe {
+        padding: 60px 30px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 98%);
+    }
+    .AboutMe-Grid {
+        grid-template-columns: 200px 1fr 180px;
+        gap: 30px;
+        max-width: 1000px;
+    }
+    .Sidebar {
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .Sidebar h3 {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+    .Sidebar li {
+        line-height: 2.2;
+        font-size: 0.95em;
+    }
+    .Projects-List {
+        padding: 25px;
+        border-radius: 12px;
+        font-size: 0.95em;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    .Social-Icons img {
+        width: 35px;
+        margin-right: 12px;
+    }
+}
+
+/* SMALL TABLET (600px to 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+    header {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 5px 0;
+    }
+    header nav a {
+        font-size: 11px;
+        margin: 0 5px;
+        padding: 3px 6px;
+    }
+    .AboutMe {
+        padding: 50px 20px;
+        clip-path: none;
+        min-height: auto;
+    }
+    .AboutMe-Grid {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 100%;
+    }
+    .Profile-Area,
+    .Bio-Area,
+    .Skills-Box,
+    .Projects-Area,
+    .Tech-Box {
+        grid-column: auto;
+    }
+    .Sidebar {
+        padding: 18px;
+        border-radius: 10px;
+    }
+    .Sidebar h3 {
+        font-size: 1em;
+        margin-bottom: 12px;
+    }
+    .Sidebar li {
+        line-height: 2;
+        font-size: 0.9em;
+    }
+    .Projects-List {
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 0.9em;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .Subtitle {
+        font-size: 0.95em;
+    }
+    .Social-Icons img {
+        width: 30px;
+        margin-right: 10px;
+    }
+}
+
+/* MOBILE (480px to 599px) */
+@media (max-width: 599px) and (min-width: 480px) {
+    header {
+        padding: 6px 10px;
+        flex-wrap: wrap;
+    }
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 5px 0;
+    }
+    header nav a {
+        font-size: 10px;
+        margin: 3px;
+        padding: 2px 5px;
+    }
+    .AboutMe {
+        padding: 40px 15px;
+        min-height: auto;
+    }
+    .AboutMe-Grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .Profile-Area,
+    .Bio-Area,
+    .Skills-Box,
+    .Projects-Area,
+    .Tech-Box {
+        grid-column: auto;
+    }
+    .Bio-Text {
+        margin-top: 20px;
+    }
+    .Sidebar {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .Sidebar h3 {
+        font-size: 0.95em;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+    .Sidebar li {
+        line-height: 1.8;
+        font-size: 0.85em;
+        padding: 4px 0;
+    }
+    .Projects-Area h2 {
+        font-size: 1.3em;
+        padding: 15px;
+        margin: 0;
+    }
+    .Projects-List {
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 0.85em;
+        line-height: 1.8;
+    }
+    .Projects-List p {
+        margin: 8px 0;
+        padding: 4px;
+    }
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 3px;
+    }
+    .Subtitle {
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+    .Social-Icons img {
+        width: 28px;
+        margin-right: 8px;
+    }
+}
+
+/* SMALL MOBILE (below 480px) */
+@media (max-width: 479px) {
+    body {
+        font-size: 13px;
+    }
+    header {
+        padding: 5px 8px;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    header nav a {
+        font-size: 8px;
+        margin: 2px;
+        padding: 2px 3px;
+    }
+    .logo img {
+        height: 40px;
+    }
+    .AboutMe {
+        padding: 30px 10px;
+        min-height: auto;
+    }
+    .AboutMe-Grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .Profile-Area,
+    .Bio-Area,
+    .Skills-Box,
+    .Projects-Area,
+    .Tech-Box {
+        grid-column: auto;
+    }
+    .Profile-Img {
+        max-width: 150px;
+        margin: 0 auto;
+    }
+    .Bio-Text {
+        margin-top: 15px;
+    }
+    .Sidebar {
+        padding: 12px;
+        border-radius: 6px;
+    }
+    .Sidebar h3 {
+        font-size: 0.9em;
+        margin-bottom: 8px;
+        padding-bottom: 6px;
+    }
+    .Sidebar li {
+        line-height: 1.6;
+        font-size: 0.8em;
+        padding: 2px 0;
+    }
+    .Projects-Area h2 {
+        font-size: 1.1em;
+        padding: 10px;
+        margin: 0;
+    }
+    .Projects-List {
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 0.8em;
+        line-height: 1.6;
+    }
+    .Projects-List p {
+        margin: 5px 0;
+        padding: 2px;
+    }
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 2px;
+    }
+    .Subtitle {
+        font-size: 0.8em;
+        margin-bottom: 8px;
+    }
+    .Social-Icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .Social-Icons img {
+        width: 24px;
+        margin-right: 6px;
+    }
+}

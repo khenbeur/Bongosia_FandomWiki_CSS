@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz</title>
     
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="Quiz.css">
-     
-    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Quiz.css">
+    <script src="carousel-quiz.js" defer></script>
 </head>
 <body>
     <header>
@@ -24,67 +23,125 @@
         </nav>
     </header>
 
-     <div class="quiz-container">
+    <main class="quiz-section">
         <h1>Quiz</h1>
-        <form id="quiz-form">
-            <!-- Question 1 -->
-            <div class="question" id="q1">
-                <p>1. Who is a Spectro Mutant Resonator in Wuthering Waves, serving as a security staff member at the Montelli Family's Averardo Bank in Ragunna?</p>
-                <label><input type="radio" name="q1" value="a"> a) Zani</label><br>
-                <label><input type="radio" name="q1" value="b"> b) Lupa</label><br>
-                <label><input type="radio" name="q1" value="c"> c) Mornye</label><br>
-                <label><input type="radio" name="q1" value="d"> d) Augusta</label>
+
+        <!-- RADIO BUTTONS (visually hidden, for CSS state) -->
+        <input type="radio" name="quiz" id="q1" checked>
+        <input type="radio" name="quiz" id="q2">
+        <input type="radio" name="quiz" id="q3">
+        <input type="radio" name="quiz" id="q4">
+        <input type="radio" name="quiz" id="q5">
+
+        <!-- QUIZ CAROUSEL (HORIZONTAL) -->
+        <div class="carousel-scroll-wrapper">
+            <div class="carousel-cards" tabindex="0">
+                <div class="card placeholder" aria-hidden="true"></div>
+
+                <!-- Question 1 -->
+                <label class="card question-card" for="q1">
+                    <div class="question-content">
+                        <p class="question-number">Q1</p>
+                    </div>
+                </label>
+
+                <!-- Question 2 -->
+                <label class="card question-card" for="q2">
+                    <div class="question-content">
+                        <p class="question-number">Q2</p>
+                    </div>
+                </label>
+
+                <!-- Question 3 -->
+                <label class="card question-card" for="q3">
+                    <div class="question-content">
+                        <p class="question-number">Q3</p>
+                    </div>
+                </label>
+
+                <!-- Question 4 -->
+                <label class="card question-card" for="q4">
+                    <div class="question-content">
+                        <p class="question-number">Q4</p>
+                    </div>
+                </label>
+
+                <!-- Question 5 -->
+                <label class="card question-card" for="q5">
+                    <div class="question-content">
+                        <p class="question-number">Q5</p>
+                    </div>
+                </label>
+
+                <div class="card placeholder" aria-hidden="true"></div>
+            </div>
+        </div>
+
+        <!-- ANSWER OPTIONS (shown based on selected question) -->
+        <div class="quiz-answers">
+            <div class="answers q1-answers">
+                <h3>Question 1</h3>
+                <p class="question-text">Who is a Spectro Mutant Resonator in Wuthering Waves, serving as a security staff member at the Montelli Family's Averardo Bank in Ragunna?</p>
+                <form id="quiz-form">
+                    <label><input type="radio" name="q1" value="a"> a) Zani</label><br>
+                    <label><input type="radio" name="q1" value="b"> b) Lupa</label><br>
+                    <label><input type="radio" name="q1" value="c"> c) Mornye</label><br>
+                    <label><input type="radio" name="q1" value="d"> d) Augusta</label>
+                </form>
             </div>
 
-            <!-- Question 2 -->
-            <div class="question" id="q2">
-                <p>2. Who is the character that was a mercenary from the Lawless Zone in New Federation before attending Startorch?</p>
-                <label><input type="radio" name="q2" value="a"> a) Mornye</label><br>
-                <label><input type="radio"name="q2" value="b"> b) Lynae</label><br>
-                <label><input type="radio" name="q2" value="c"> c) Lupa</label><br>
-                <label><input type="radio" name="q2" value="d"> d) Iuno</label>
+            <div class="answers q2-answers">
+                <h3>Question 2</h3>
+                <p class="question-text">Who is the character that was a mercenary from the Lawless Zone in New Federation before attending Startorch?</p>
+                <form id="quiz-form">
+                    <label><input type="radio" name="q2" value="a"> a) Mornye</label><br>
+                    <label><input type="radio" name="q2" value="b"> b) Lynae</label><br>
+                    <label><input type="radio" name="q2" value="c"> c) Lupa</label><br>
+                    <label><input type="radio" name="q2" value="d"> d) Iuno</label>
+                </form>
             </div>
 
-
-            <!-- Question 3 -->
-
-            <div class="question" id="q3">
-                <p>3. Who is the fearless Ephor of Septimont with a will of iron, she remains a fiercely resilient yet humble leader?</p>
-                <label><input type="radio" name="q3" value="a"> a) Augusta</label><br>
-                <label><input type="radio" name="q3" value="b"> b) Zani</label><br>
-                <label><input type="radio" name="q3" value="c"> c) Rover</label><br>
-                <label><input type="radio" name="q3" value="d"> d) Lynae</label>
+            <div class="answers q3-answers">
+                <h3>Question 3</h3>
+                <p class="question-text">Who is the fearless Ephor of Septimont with a will of iron, she remains a fiercely resilient yet humble leader?</p>
+                <form id="quiz-form">
+                    <label><input type="radio" name="q3" value="a"> a) Augusta</label><br>
+                    <label><input type="radio" name="q3" value="b"> b) Zani</label><br>
+                    <label><input type="radio" name="q3" value="c"> c) Rover</label><br>
+                    <label><input type="radio" name="q3" value="d"> d) Lynae</label>
+                </form>
             </div>
 
+            <div class="answers q4-answers">
+                <h3>Question 4</h3>
+                <p class="question-text">Who is the main character in the story of Wuthering Waves?</p>
+                <form id="quiz-form">
+                    <label><input type="radio" name="q4" value="a"> a) Rover</label><br>
+                    <label><input type="radio" name="q4" value="b"> b) Zani</label><br>
+                    <label><input type="radio" name="q4" value="c"> c) Mornye</label><br>
+                    <label><input type="radio" name="q4" value="d"> d) Scar</label>
+                </form>
+            </div>
 
-            <!-- Question 4 -->
-             <div class="question" id="q4">
-                <p>4. Who is the main charater in the story of Wuthering Waves?</p>
-                <label><input type="radio" name="q4" value="a"> a) Rover</label><br>
-                <label><input type="radio" name="q4" value="b"> b) Zani</label><br>
-                <label><input type="radio" name="q4" value="c"> c) Mornye</label><br>
-                <label><input type="radio" name="q4" value="d"> d) Scar    </label>
-             </div>
-
-
-             <!-- Question 5 -->
-             <div class="question" id="q5">
-                <p>5. which region is Mount Fermament located?</p>
-                <label><input type="radio" name="q5" value="a"> a) Huanglong </label><br>
-                <label><input type="radio" name="q5" value="b"> b) Black Shore </label><br>
-                <label><input type="radio" name="q5" value="c"> c) Rinacita </label><br>
-                <label><input type="radio" name="q5" value="d"> d) Lahai-Roi</label>
-                </div>
-            <!-- Additional questions would follow similarly ... -->
+            <div class="answers q5-answers">
+                <h3>Question 5</h3>
+                <p class="question-text">Which region is Mount Fermament located?</p>
+                <form id="quiz-form">
+                    <label><input type="radio" name="q5" value="a"> a) Huanglong</label><br>
+                    <label><input type="radio" name="q5" value="b"> b) Black Shore</label><br>
+                    <label><input type="radio" name="q5" value="c"> c) Rinacita</label><br>
+                    <label><input type="radio" name="q5" value="d"> d) Lahai-Roi</label>
+                </form>
+            </div>
 
             <div class="controls">
                 <button type="button" id="prev-btn">Previous</button>
                 <button type="button" id="next-btn">Next</button>
                 <button type="submit" id="submit-btn">Submit</button>
             </div>
-        </form>
+        </div>
 
         <div id="result" class="hidden"></div>
-    </div>
+    </main>
 </body>
 </html>

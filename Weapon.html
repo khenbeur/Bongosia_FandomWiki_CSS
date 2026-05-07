@@ -7,6 +7,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Weapon.css">
+    <script src="carousel-weapon.js" defer></script>
 </head>
 
 <body>
@@ -23,7 +24,8 @@
         </nav>
     </header>
 
-    
+   
+
         <main class="Weapon-section">
             <!-- RADIO BUTTONS (visually hidden, for CSS state) -->
             <input type="radio" name="weapon" id="weapon1" checked>
@@ -37,7 +39,7 @@
 
             <div class="carousel-scroll-wrapper">
                 <div class="carousel-cards" tabindex="0">
-                    
+                    <div class="card placeholder" aria-hidden="true"></div>
                     <label class="card" for="weapon1">
                         <img src="SourceImg/Weapons/Weapon_Abyss_Surges.jpg" alt="Abyss Surges">
                         <span class="card-name">Abyss Surges</span>

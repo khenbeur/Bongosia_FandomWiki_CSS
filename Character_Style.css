@@ -81,18 +81,16 @@ input[type="radio"] {
     display: flex;
     gap: 2em;
     padding: 1em 0;
-    scroll-snap-type: x mandatory;
     overflow-x: auto;
-    scrollbar-width: thin;
-    scroll-behavior: smooth;
+    
 }
 
 .carousel-cards::-webkit-scrollbar {
-    height: 8px;
+    display: none;
 }
-.carousel-cards::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
+
+.carousel-cards {
+    scrollbar-width: none; /* Firefox */
 }
 
 /* Individual card */
@@ -219,31 +217,256 @@ input[type="radio"] {
     background: linear-gradient(to right, #43cea2, #185a9d);
 }
 
-/* Responsive */
-@media (max-width: 700px) {
-    .carousel-cards {
-        gap: 1em;
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* DESKTOP (1200px and above) - Default */
+@media (min-width: 1200px) {
+    .character-section {
+        padding: 60px 40px;
+    }
+    .carousel-scroll-wrapper {
+        margin-bottom: 40px;
     }
     .card {
-        flex: 0 0 7em;
-        height: 12em;
-        border-radius: 5em;
-    }
-    .card img {
-        height: 100%;
-        border-radius: 5em;
-    }
-    .card.placeholder {
-        height: 12em;
+        flex: 0 0 20em;
+        height: 20em;
     }
     .description {
-        padding: 12px;
-        font-size: 0.95em;
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        min-height: 200px;
     }
 }
 
+/* TABLET (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    header nav a {
+        font-size: 13px;
+        margin-left: 8px;
+        padding: 4px 8px;
+    }
+    .character-section {
+        text-align: center;
+        padding: 40px 25px;
+    }
+    .character-section h1 {
+        font-size: 1.8em;
+    }
+    .carousel-scroll-wrapper {
+        margin-bottom: 30px;
+    }
+    .carousel-cards {
+        gap: 1.8em;
+        padding: 1em 0;
+    }
+    .card {
+        flex: 0 0 16em;
+        height: 16em;
+        border-radius: 6em;
+    }
+    .card img {
+        border-radius: 6em;
+    }
+    .description {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        min-height: 170px;
+        font-size: 0.95em;
+    }
+    .card:hover {
+        transform: scale(1.02);
+    }
+    #zani:checked ~ .carousel-scroll-wrapper .card[for="zani"],
+    #lupa:checked ~ .carousel-scroll-wrapper .card[for="lupa"],
+    #mornye:checked ~ .carousel-scroll-wrapper .card[for="mornye"],
+    #lynae:checked ~ .carousel-scroll-wrapper .card[for="lynae"],
+    #augusta:checked ~ .carousel-scroll-wrapper .card[for="augusta"],
+    #iuno:checked ~ .carousel-scroll-wrapper .card[for="iuno"] {
+        transform: scale(1.15);
+    }
+}
 
+/* SMALL TABLET (600px to 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+    header {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 5px 0;
+    }
+    header nav a {
+        font-size: 11px;
+        margin: 0 5px;
+        padding: 3px 6px;
+    }
+    .character-section {
+        text-align: center;
+        padding: 30px 15px;
+    }
+    .character-section h1 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    .carousel-scroll-wrapper {
+        margin-bottom: 25px;
+    }
+    .carousel-cards {
+        gap: 1.4em;
+    }
+    .card {
+        flex: 0 0 13em;
+        height: 13em;
+        border-radius: 5em;
+    }
+    .card img {
+        border-radius: 5em;
+    }
+    .card-name {
+        font-size: 1.05em;
+    }
+    .description {
+        max-width: 100%;
+        margin: auto;
+        padding: 15px;
+        min-height: 150px;
+        font-size: 0.9em;
+    }
+}
 
+/* MOBILE (480px to 599px) */
+@media (max-width: 599px) and (min-width: 480px) {
+    header {
+        padding: 6px 10px;
+        flex-wrap: wrap;
+    }
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 5px 0;
+    }
+    header nav a {
+        font-size: 10px;
+        margin: 3px;
+        padding: 2px 5px;
+    }
+    .character-section {
+        text-align: center;
+        padding: 20px 10px;
+    }
+    .character-section h1 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    .carousel-scroll-wrapper {
+        margin-bottom: 20px;
+    }
+    .carousel-cards {
+        gap: 1em;
+        padding: 0.8em 0;
+    }
+    .card {
+        flex: 0 0 10em;
+        height: 10em;
+        border-radius: 3.5em;
+    }
+    .card img {
+        border-radius: 3.5em;
+    }
+    .card-name {
+        font-size: 0.95em;
+        margin-top: 0.3em;
+    }
+    .description {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 12px;
+        min-height: 130px;
+        font-size: 0.85em;
+    }
+    .description p {
+        margin: 8px 0;
+    }
+}
+
+/* SMALL MOBILE (below 480px) */
+@media (max-width: 479px) {
+    body {
+        font-size: 14px;
+    }
+    header {
+        padding: 5px 8px;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    header nav a {
+        font-size: 9px;
+        margin: 2px;
+        padding: 2px 4px;
+    }
+    .logo img {
+        height: 40px;
+    }
+    .character-section {
+        text-align: center;
+        padding: 15px 8px;
+    }
+    .character-section h1 {
+        font-size: 1.1em;
+        margin-bottom: 12px;
+    }
+    .carousel-scroll-wrapper {
+        margin-bottom: 15px;
+    }
+    .carousel-cards {
+        gap: 0.6em;
+        padding: 0.5em 0;
+    }
+    .card {
+        flex: 0 0 7.5em;
+        height: 7.5em;
+        border-radius: 2.5em;
+        padding: 0.3em;
+    }
+    .card img {
+        border-radius: 2.5em;
+    }
+    .card-name {
+        font-size: 0.8em;
+        margin-top: 0.2em;
+    }
+    .description {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+        min-height: 110px;
+        font-size: 0.8em;
+    }
+    .description h2 {
+        font-size: 1em;
+        margin-bottom: 6px;
+    }
+    .description p {
+        margin: 5px 0;
+        line-height: 1.4;
+    }
+}
 
 .carousel-cards::scroll-button {
     display: block;
