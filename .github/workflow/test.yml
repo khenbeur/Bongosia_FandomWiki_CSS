@@ -3,7 +3,7 @@ name: CICD Testing
 on:
 
 pull_request:
-branches:{"main"}
+branches: {"main"}
 
 jobs:
 test:
